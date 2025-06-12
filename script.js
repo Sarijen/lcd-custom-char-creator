@@ -66,7 +66,7 @@ function toggle_grid() {
     grid_color = "black";
   }
 
-  for (let pixel = 0; pixel <= char_size; pixel++) {
+  for (let pixel = 0; pixel < char_size; pixel++) {
     document.getElementById(pixel.toString()).style.borderColor = grid_color;
   }
 
@@ -74,7 +74,7 @@ function toggle_grid() {
 
 
 function char_invert() {
-  for (let pixel = 0; pixel <= char_size; pixel++) {
+  for (let pixel = 0; pixel < char_size; pixel++) {
     const current_pixel = document.getElementById(pixel.toString());
     current_pixel.classList.toggle("dimn");
   }
@@ -82,7 +82,7 @@ function char_invert() {
 
 
 function char_clear() {
-  for (let pixel = 0; pixel <= char_size; pixel++) {
+  for (let pixel = 0; pixel < char_size; pixel++) {
     document.getElementById(pixel.toString()).classList.remove("dimn");
   }
 }

@@ -25,10 +25,16 @@ body {
   justify-content: space-between;
 }
 
+@media (max-width: 600px) {
+  .row_container {
+    flex-direction: column;
+  }
+}
+
 .code {
   background-color:#202021;
   padding: 1rem;
-  margin-inline: 1rem;
+  margin: 1rem;
   width: auto;
 }
 
