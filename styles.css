@@ -1,0 +1,111 @@
+body {
+ background-color: rgb(51, 50, 50);
+ min-width: 325px;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.title {
+  text-align: center;
+}
+
+.col_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.row_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.code {
+  background-color:#202021;
+  padding: 1rem;
+  margin-inline: 1rem;
+  width: auto;
+}
+
+button:hover {
+  background-color: #787878;
+}
+
+button {
+  align-items: center;
+  appearance: none;
+  background-color: #151515;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow:rgba(45, 35, 66, 0.4) 0 2px 4px,
+             rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#595961 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #cfd1ec;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 18px;
+  height: 48px;
+  line-height: 1;
+  margin: 5px;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+}
+
+button:focus {
+  box-shadow: #444445 0 0 0 1.5px inset,
+  rgba(45, 35, 66, 0.4) 0 2px 4px,
+  rgba(45, 35, 66, 0.4) 0 7px 13px -3px,
+  #525252 0 -3px 0 inset;
+}
+
+button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+  rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #57575a 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+button:active {
+  box-shadow: #565658 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.char {
+  display: grid;
+  border: 15px solid rgb(25, 25, 25);
+  grid-template-columns: auto auto auto auto auto;
+  background-color: rgb(158, 232, 55);
+  transition: background-color 0.3s ease;
+  padding: 25px;
+}
+
+.char > div {
+  background-color: rgb(158, 232, 55);
+  transition: background-color 0.3s ease, border 0.25s ease, filter 0.2s ease;
+  border: 1px solid transparent;
+  margin: 3px;
+  padding: 20px;
+}
+
+.char > div:hover {
+  filter: brightness(40%);
+}
+
+.dimn {
+  filter: brightness(40%);
+}
+
+.bright {
+  filter: brightness(300%);
+}
