@@ -40,7 +40,19 @@ function set_custom_color() {
 }
 
 
+var is_mousedown = false;
+
+document.addEventListener('mousedown', () => {
+  is_mousedown = true;
+});
+
+document.addEventListener('mouseup', () => {
+  is_mousedown = false;
+});
+
 function toggle_pixel(pixel_id) {
+  if (is_mousedown == false) {return;}
+
   const pixel_element = document.getElementById(pixel_id);
 
   pixel_element.classList.toggle("dimn");
