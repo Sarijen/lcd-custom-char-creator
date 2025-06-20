@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Custom-Char-Draw</title>
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico?v=1">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script> 
@@ -20,7 +22,7 @@
     <button onclick="set_color('rgb(158, 232, 55)')">Green</button>
     <button onclick="set_color('rgb(55, 208, 232)')">Blue</button>
     <button onclick="set_custom_color()">Custom</button>
-    <input type="color" id="color-picker" onclick="set_custom_color()">
+    <input type="color" value="#DD2222" id="color-picker" onclick="set_custom_color()">
   </div>
 
   <div class="row_container">
@@ -78,6 +80,9 @@
   </div>
 
 </div>
+<footer>
+  This project is <a href="https://github.com/Sarijen/lcd-custom-char-creator" target="_blank">open-source</a> licensed under the MIT Licence
+</footer>
 
 </body>
 </html>

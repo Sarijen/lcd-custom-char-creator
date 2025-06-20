@@ -23,7 +23,6 @@ var pixel_data = [
   0, 0, 0, 0, 0,
 ];
 
-
 function set_color(color) {
   document.getElementById("char").style.backgroundColor = color;
 
@@ -54,7 +53,6 @@ function toggle_pixel(pixel_id) {
   if (is_mousedown == false) {return;}
 
   const pixel_element = document.getElementById(pixel_id);
-
   pixel_element.classList.toggle("dimn");
   
   pixel_index = Number(pixel_id);

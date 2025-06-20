@@ -115,3 +115,13 @@ button:active {
 .bright {
   filter: brightness(300%);
 }
+
+footer {
+  background-color:#202021;
+  text-align: center;
+  position: fixed;
+  padding: 0.3rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
