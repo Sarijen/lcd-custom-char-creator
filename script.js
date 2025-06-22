@@ -49,7 +49,7 @@ document.addEventListener('mouseup', () => {
   is_mousedown = false;
 });
 
-function toggle_pixel(pixel_id) {
+function drag_toggle_pixel(pixel_id) {
   if (is_mousedown == false) {return;}
 
   const pixel_element = document.getElementById(pixel_id);
@@ -64,6 +64,20 @@ function toggle_pixel(pixel_id) {
     pixel_data[pixel_index % char_width] = 1;
   }
 
+}
+
+function click_toggle_pixel(pixel_id) {
+  const pixel_element = document.getElementById(pixel_id);
+  pixel_element.classList.toggle("dimn");
+  
+  pixel_index = Number(pixel_id);
+  pixel_value = pixel_data[pixel_index % char_width];
+
+  if (pixel_value == 1) {
+    pixel_data[pixel_index % char_width] = 0;
+  } else {
+    pixel_data[pixel_index % char_width] = 1;
+  }
 }
 
 

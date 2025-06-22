@@ -18,54 +18,54 @@
 
 <div class="col_container">
   <div class="button">
-    <button onclick="set_color('rgb(158, 232, 55)')">Green</button>
-    <button onclick="set_color('rgb(55, 208, 232)')">Blue</button>
-    <button onclick="set_custom_color()">Custom</button>
-    <input type="color" value="#DD2222" id="color-picker" onclick="set_custom_color()">
+    <button onmousedown="set_color('rgb(158, 232, 55)')">Green</button>
+    <button onmousedown="set_color('rgb(55, 208, 232)')">Blue</button>
+    <button onmousedown="set_custom_color()">Custom</button>
+    <input type="color" value="#DD2222" id="color-picker" onmousedown="set_custom_color()">
   </div>
 
   <div class="row_container">
   <div class="char" id="char">
-    <div id="0"  onmouseover="toggle_pixel('0') "></div>
-    <div id="1"  onmouseover="toggle_pixel('1') "></div>
-    <div id="2"  onmouseover="toggle_pixel('2') "></div>
-    <div id="3"  onmouseover="toggle_pixel('3') "></div>
-    <div id="4"  onmouseover="toggle_pixel('4') "></div>
-    <div id="5"  onmouseover="toggle_pixel('5') "></div>
-    <div id="6"  onmouseover="toggle_pixel('6') "></div>
-    <div id="7"  onmouseover="toggle_pixel('7') "></div>
-    <div id="8"  onmouseover="toggle_pixel('8') "></div>
-    <div id="9"  onmouseover="toggle_pixel('9') "></div>
-    <div id="10" onmouseover="toggle_pixel('10')"></div>
-    <div id="11" onmouseover="toggle_pixel('11')"></div>
-    <div id="12" onmouseover="toggle_pixel('12')"></div>
-    <div id="13" onmouseover="toggle_pixel('13')"></div>
-    <div id="14" onmouseover="toggle_pixel('14')"></div>
-    <div id="15" onmouseover="toggle_pixel('15')"></div>
-    <div id="16" onmouseover="toggle_pixel('16')"></div>
-    <div id="17" onmouseover="toggle_pixel('17')"></div>
-    <div id="18" onmouseover="toggle_pixel('18')"></div>
-    <div id="19" onmouseover="toggle_pixel('19')"></div>
-    <div id="20" onmouseover="toggle_pixel('20')"></div>
-    <div id="21" onmouseover="toggle_pixel('21')"></div>
-    <div id="22" onmouseover="toggle_pixel('22')"></div>
-    <div id="23" onmouseover="toggle_pixel('23')"></div>
-    <div id="24" onmouseover="toggle_pixel('24')"></div>
-    <div id="25" onmouseover="toggle_pixel('25')"></div>
-    <div id="26" onmouseover="toggle_pixel('26')"></div>
-    <div id="27" onmouseover="toggle_pixel('27')"></div>
-    <div id="28" onmouseover="toggle_pixel('28')"></div>
-    <div id="29" onmouseover="toggle_pixel('29')"></div>
-    <div id="30" onmouseover="toggle_pixel('30')"></div>
-    <div id="31" onmouseover="toggle_pixel('31')"></div>
-    <div id="32" onmouseover="toggle_pixel('32')"></div>
-    <div id="33" onmouseover="toggle_pixel('33')"></div>
-    <div id="34" onmouseover="toggle_pixel('34')"></div>
-    <div id="35" onmouseover="toggle_pixel('35')"></div>
-    <div id="36" onmouseover="toggle_pixel('36')"></div>
-    <div id="37" onmouseover="toggle_pixel('37')"></div>
-    <div id="38" onmouseover="toggle_pixel('38')"></div>
-    <div id="39" onmouseover="toggle_pixel('39')"></div>
+    <div id="0"  onmouseover="drag_toggle_pixel('0') " onmousedown="click_toggle_pixel('0')"></div>
+    <div id="1"  onmouseover="drag_toggle_pixel('1') " onmousedown="click_toggle_pixel('1')"></div>
+    <div id="2"  onmouseover="drag_toggle_pixel('2') " onmousedown="click_toggle_pixel('2')"></div>
+    <div id="3"  onmouseover="drag_toggle_pixel('3') " onmousedown="click_toggle_pixel('3')"></div>
+    <div id="4"  onmouseover="drag_toggle_pixel('4') " onmousedown="click_toggle_pixel('4')"></div>
+    <div id="5"  onmouseover="drag_toggle_pixel('5') " onmousedown="click_toggle_pixel('5')"></div>
+    <div id="6"  onmouseover="drag_toggle_pixel('6') " onmousedown="click_toggle_pixel('6')"></div>
+    <div id="7"  onmouseover="drag_toggle_pixel('7') " onmousedown="click_toggle_pixel('7')"></div>
+    <div id="8"  onmouseover="drag_toggle_pixel('8') " onmousedown="click_toggle_pixel('8')"></div>
+    <div id="9"  onmouseover="drag_toggle_pixel('9') " onmousedown="click_toggle_pixel('9')"></div>
+    <div id="10" onmouseover="drag_toggle_pixel('10')" onmousedown="click_toggle_pixel('10')"></div>
+    <div id="11" onmouseover="drag_toggle_pixel('11')" onmousedown="click_toggle_pixel('11')"></div>
+    <div id="12" onmouseover="drag_toggle_pixel('12')" onmousedown="click_toggle_pixel('12')"></div>
+    <div id="13" onmouseover="drag_toggle_pixel('13')" onmousedown="click_toggle_pixel('13')"></div>
+    <div id="14" onmouseover="drag_toggle_pixel('14')" onmousedown="click_toggle_pixel('14')"></div>
+    <div id="15" onmouseover="drag_toggle_pixel('15')" onmousedown="click_toggle_pixel('15')"></div>
+    <div id="16" onmouseover="drag_toggle_pixel('16')" onmousedown="click_toggle_pixel('16')"></div>
+    <div id="17" onmouseover="drag_toggle_pixel('17')" onmousedown="click_toggle_pixel('17')"></div>
+    <div id="18" onmouseover="drag_toggle_pixel('18')" onmousedown="click_toggle_pixel('18')"></div>
+    <div id="19" onmouseover="drag_toggle_pixel('19')" onmousedown="click_toggle_pixel('19')"></div>
+    <div id="20" onmouseover="drag_toggle_pixel('20')" onmousedown="click_toggle_pixel('20')"></div>
+    <div id="21" onmouseover="drag_toggle_pixel('21')" onmousedown="click_toggle_pixel('21')"></div>
+    <div id="22" onmouseover="drag_toggle_pixel('22')" onmousedown="click_toggle_pixel('22')"></div>
+    <div id="23" onmouseover="drag_toggle_pixel('23')" onmousedown="click_toggle_pixel('23')"></div>
+    <div id="24" onmouseover="drag_toggle_pixel('24')" onmousedown="click_toggle_pixel('24')"></div>
+    <div id="25" onmouseover="drag_toggle_pixel('25')" onmousedown="click_toggle_pixel('25')"></div>
+    <div id="26" onmouseover="drag_toggle_pixel('26')" onmousedown="click_toggle_pixel('26')"></div>
+    <div id="27" onmouseover="drag_toggle_pixel('27')" onmousedown="click_toggle_pixel('27')"></div>
+    <div id="28" onmouseover="drag_toggle_pixel('28')" onmousedown="click_toggle_pixel('28')"></div>
+    <div id="29" onmouseover="drag_toggle_pixel('29')" onmousedown="click_toggle_pixel('29')"></div>
+    <div id="30" onmouseover="drag_toggle_pixel('30')" onmousedown="click_toggle_pixel('30')"></div>
+    <div id="31" onmouseover="drag_toggle_pixel('31')" onmousedown="click_toggle_pixel('31')"></div>
+    <div id="32" onmouseover="drag_toggle_pixel('32')" onmousedown="click_toggle_pixel('32')"></div>
+    <div id="33" onmouseover="drag_toggle_pixel('33')" onmousedown="click_toggle_pixel('33')"></div>
+    <div id="34" onmouseover="drag_toggle_pixel('34')" onmousedown="click_toggle_pixel('34')"></div>
+    <div id="35" onmouseover="drag_toggle_pixel('35')" onmousedown="click_toggle_pixel('35')"></div>
+    <div id="36" onmouseover="drag_toggle_pixel('36')" onmousedown="click_toggle_pixel('36')"></div>
+    <div id="37" onmouseover="drag_toggle_pixel('37')" onmousedown="click_toggle_pixel('37')"></div>
+    <div id="38" onmouseover="drag_toggle_pixel('38')" onmousedown="click_toggle_pixel('38')"></div>
+    <div id="39" onmouseover="drag_toggle_pixel('39')" onmousedown="click_toggle_pixel('39')"></div>
   </div>
   <div class="code">
     <noscript>
@@ -77,14 +77,16 @@
   </div>
 
   <div class="buttons">
-  <button onclick="toggle_grid()">Toggle grid</button>
-  <button onclick="char_invert()">Invert</button>
-  <button onclick="char_clear()">Clear</button>
+  <button onmousedown="toggle_grid()">Toggle grid</button>
+  <button onmousedown="char_invert()">Invert</button>
+  <button onmousedown="char_clear()">Clear</button>
   </div>
 
 </div>
 <footer>
-  This project is <a href="https://github.com/Sarijen/lcd-custom-char-creator" target="_blank">open-source</a> licensed under the MIT Licence
+  This project is
+  <a href="https://github.com/Sarijen/lcd-custom-char-creator" target="_blank" rel="noopener noreferrer">open-source</a>
+  under the MIT Licence, 2025
 </footer>
 
 </body>
