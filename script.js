@@ -23,6 +23,7 @@ var pixel_data = [
   0, 0, 0, 0, 0,
 ];
 
+
 function set_color(color) {
   document.getElementById("char").style.backgroundColor = color;
 
@@ -49,34 +50,32 @@ document.addEventListener('mouseup', () => {
   is_mousedown = false;
 });
 
-function drag_toggle_pixel(pixel_id) {
+
+function pixel_ondrag(pixel_id) {
   if (is_mousedown == false) {return;}
 
   const pixel_element = document.getElementById(pixel_id);
   pixel_element.classList.toggle("dimn");
   
   pixel_index = Number(pixel_id);
-  pixel_value = pixel_data[pixel_index % char_width];
-
-  if (pixel_value == 1) {
-    pixel_data[pixel_index % char_width] = 0;
-  } else {
-    pixel_data[pixel_index % char_width] = 1;
-  }
-
+  toggle_pixel_value(pixel_index);
 }
 
-function click_toggle_pixel(pixel_id) {
+
+function pixel_onclick(pixel_id) {
   const pixel_element = document.getElementById(pixel_id);
   pixel_element.classList.toggle("dimn");
   
-  pixel_index = Number(pixel_id);
-  pixel_value = pixel_data[pixel_index % char_width];
+  const pixel_index = Number(pixel_id);
+  toggle_pixel_value(pixel_index);
+}
 
-  if (pixel_value == 1) {
-    pixel_data[pixel_index % char_width] = 0;
+
+function toggle_pixel_value(pixel_index) {
+  if (pixel_data[pixel_index] == 1) {
+    pixel_data[pixel_index] = 0;
   } else {
-    pixel_data[pixel_index % char_width] = 1;
+    pixel_data[pixel_index] = 1;
   }
 }
 
@@ -99,8 +98,10 @@ function toggle_grid() {
 
 function char_invert() {
   for (let pixel = 0; pixel < char_size; pixel++) {
-    const current_pixel = document.getElementById(pixel.toString());
-    current_pixel.classList.toggle("dimn");
+    toggle_pixel_value(pixel);
+
+    const pixel_element = document.getElementById(pixel.toString());
+    pixel_element.classList.toggle("dimn");
   }
 }
 
@@ -109,4 +110,22 @@ function char_clear() {
   for (let pixel = 0; pixel < char_size; pixel++) {
     document.getElementById(pixel.toString()).classList.remove("dimn");
   }
+
+  pixel_data = [
+    0, 0, 0, 0, 0,
+
+    0, 0, 0, 0, 0,
+
+    0, 0, 0, 0, 0,
+
+    0, 0, 0, 0, 0,
+
+    0, 0, 0, 0, 0,
+
+    0, 0, 0, 0, 0,
+
+    0, 0, 0, 0, 0,
+
+    0, 0, 0, 0, 0,
+  ];
 }
