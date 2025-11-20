@@ -38,6 +38,13 @@ body {
   width: auto;
 }
 
+/* 
+  We need pre-wrap for javascript spaces and break lines to work
+*/
+.code p {
+  white-space: pre-wrap;
+}
+
 button:hover {
   background-color: #787878;
 }

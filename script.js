@@ -23,6 +23,22 @@ var pixel_data = [
   0, 0, 0, 0, 0,
 ];
 
+function update_text() {
+  let code_text = "uint8_t custom_char[] = {";
+
+  for (let y = 0; y < char_height; y++) {
+    code_text += "\n  0b";
+    for (let x = 0; x < char_width; x++) {
+      let pixel_index = (y * char_width) + x;
+
+      code_text += pixel_data[pixel_index].toString();
+    }
+  }
+
+  code_text += "\n};";
+  document.getElementById("code").textContent = code_text;
+}
+
 
 function set_color(color) {
   document.getElementById("char").style.backgroundColor = color;
@@ -59,6 +75,8 @@ function pixel_ondrag(pixel_id) {
   
   pixel_index = Number(pixel_id);
   toggle_pixel_value(pixel_index);
+
+  update_text();
 }
 
 
@@ -68,6 +86,8 @@ function pixel_onclick(pixel_id) {
   
   const pixel_index = Number(pixel_id);
   toggle_pixel_value(pixel_index);
+
+  update_text();
 }
 
 
@@ -77,6 +97,8 @@ function toggle_pixel_value(pixel_index) {
   } else {
     pixel_data[pixel_index] = 1;
   }
+
+  update_text();
 }
 
 
@@ -103,6 +125,8 @@ function char_invert() {
     const pixel_element = document.getElementById(pixel.toString());
     pixel_element.classList.toggle("dimn");
   }
+
+  update_text();
 }
 
 
