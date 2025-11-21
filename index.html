@@ -11,7 +11,7 @@
   <script src="script.js" defer></script> 
 </head>
 
-<body>
+<body onload="load_cookies()">
 <div class="title">  
   <h1>Custom Character Draw</h1>
   <h2>for HD44780-like displays</h2>
@@ -74,6 +74,18 @@
       You can either enable it or read the source code if you don't trust it.
     </noscript>
     <p id="code">Code will be generated here!</p>
+    <label>
+      <input type="radio" value="8" name="bit_depth" checked> 8bit
+    </label>
+    <label>
+      <input type="radio" value="10" name="bit_depth"> 10bit
+    </label>
+    <label>
+      <input type="radio" value="12" name="bit_depth"> 12bit
+    </label>
+    <label>
+      <input type="radio" value="16" name="bit_depth"> 16bit
+    </label>
   </div>
   </div>
 

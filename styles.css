@@ -112,11 +112,15 @@ button:active {
 }
 
 .char > div:hover {
-  filter: brightness(40%);
+  filter: brightness(80%);
 }
 
 .dimn {
   filter: brightness(40%);
+}
+
+.char > div.dimn:hover {
+  filter: brightness(60%);
 }
 
 .bright {

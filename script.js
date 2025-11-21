@@ -1,6 +1,11 @@
 const light_green = "rgb(158, 232, 55)";
 const light_blue = "rgb(31, 191, 215)";
 
+//  COOKIES
+var grid_enabled;
+var custom_color = "#DD2222";
+//  /COOKIES
+
 const char_width = 5;
 const char_height = 8;
 const char_size = char_width * char_height;
@@ -22,6 +27,34 @@ var pixel_data = [
 
   0, 0, 0, 0, 0,
 ];
+
+function get_cookie(name) {
+  return document.cookie
+    .split('; ')
+    .find(row => row.startsWith(name + '='))
+    ?.split('=')[1];
+}
+
+function load_cookies() {
+  const saved_color = get_cookie("custom_color");
+
+  if (saved_color) {
+    document.getElementById("color-picker").value = saved_color;
+  } else {
+    document.getElementById("color-picker").value = custom_color;
+  }
+
+  if (get_cookie("grid_enabled") == "true") {
+    toggle_grid();
+  }
+
+  update_cookies();
+}
+
+function update_cookies() {
+  document.cookie = "grid_enabled=" + grid_enabled + "; path=/";
+  document.cookie = "custom_color=" + custom_color + "; path=/";
+}
 
 function update_text() {
   let code_text = "uint8_t custom_char[] = {";
@@ -53,6 +86,9 @@ function set_color(color) {
 function set_custom_color() {
   let color = document.getElementById("color-picker").value;
   set_color(color);
+
+  custom_color = color;
+  update_cookies();
 }
 
 
@@ -115,6 +151,12 @@ function toggle_grid() {
     document.getElementById(pixel.toString()).style.borderColor = grid_color;
   }
 
+  if (grid_enabled == "true") {
+    grid_enabled = "false";
+  } else {
+    grid_enabled = "true";
+  }
+  update_cookies();
 }
 
 
