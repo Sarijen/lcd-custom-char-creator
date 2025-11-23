@@ -66,6 +66,7 @@ function update_text() {
 
       code_text += pixel_data[pixel_index].toString();
     }
+    code_text += ",";
   }
 
   code_text += "\n};";
