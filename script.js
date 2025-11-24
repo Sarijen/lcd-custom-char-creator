@@ -1,10 +1,6 @@
-const light_green = "rgb(158, 232, 55)";
-const light_blue = "rgb(31, 191, 215)";
-
 //  COOKIES
 var grid_enabled;
 var custom_color = "#DD2222";
-//  /COOKIES
 
 const char_width = 5;
 const char_height = 8;
@@ -74,21 +70,21 @@ function update_text() {
 }
 
 
-function set_color(color) {
-  document.getElementById("char").style.backgroundColor = color;
+function set_color(new_color) {
+  document.getElementById("char").style.backgroundColor = new_color;
 
   const childDivs = document.querySelectorAll('.char > div');
   childDivs.forEach(div => {
-    div.style.backgroundColor = color;
+    div.style.backgroundColor = new_color;
   });
 }
 
 
 function set_custom_color() {
-  let color = document.getElementById("color-picker").value;
-  set_color(color);
+  const new_color = document.getElementById("color-picker").value;
+  set_color(new_color);
 
-  custom_color = color;
+  custom_color = new_color;
   update_cookies();
 }
 
