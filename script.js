@@ -144,8 +144,13 @@ function toggle_grid() {
     grid_color = "black";
   }
 
+  set_grid_color(grid_color);
+
+}
+
+function set_grid_color(new_color) {
   for (let pixel = 0; pixel < char_size; pixel++) {
-    document.getElementById(pixel.toString()).style.borderColor = grid_color;
+    document.getElementById(pixel.toString()).style.borderColor = new_color;
   }
 
   if (grid_enabled == "true") {
@@ -153,6 +158,7 @@ function toggle_grid() {
   } else {
     grid_enabled = "true";
   }
+
   update_cookies();
 }
 
