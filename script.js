@@ -66,7 +66,7 @@ function load_cookies() {
 function update_cookies() {
   document.cookie = "grid_enabled=" + grid_enabled_c + "; path=/";
   document.cookie = "custom_color=" + custom_color_c + "; path=/";
-  document.cookie = "set_color =" + set_color_c + "; path=/";
+  document.cookie = "set_color=" + set_color_c + "; path=/";
 }
 
 function update_text() {
