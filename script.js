@@ -31,6 +31,10 @@ var pixel_data = [
   0, 0, 0, 0, 0,
 ];
 
+window.onload = () => {
+  load_cookies();
+};
+
 function get_cookie(name) {
   return saved_cookies 
     .split('; ')
