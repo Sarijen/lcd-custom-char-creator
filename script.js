@@ -1,8 +1,13 @@
+var default_green = "#9ee837";
+var default_blue = "#37d0e8";
+
 //  COOKIES
-var grid_enabled;
-var custom_color = "#DD2222";
-var last_color = "#FF00FF";
 var saved_cookies;
+
+var grid_enabled_c;
+var custom_color_c = "#DD2222";
+var set_color_c = default_green;
+//  COOKIES
 
 const char_width = 5;
 const char_height = 8;
@@ -37,32 +42,31 @@ function load_cookies() {
   saved_cookies = document.cookie;
 
 
-  const saved_color = get_cookie("custom_color");
-
-  if (saved_color) {
-    document.getElementById("color-picker").value = saved_color;
+  const last_custom_color = get_cookie("custom_color");
+  if (last_custom_color) {
+    document.getElementById("color-picker").value = last_custom_color;
   } else {
-    document.getElementById("color-picker").value = custom_color;
+    document.getElementById("color-picker").value = custom_color_c;
   }
 
   if (get_cookie("grid_enabled") == "true") {
     set_grid_color("black");
   }
 
-  const last_saved_color = get_cookie("last_color");
-  if (last_saved_color) {
-    set_color(last_saved_color);
+  const last_set_color = get_cookie("set_color");
+  if (last_set_color) {
+    set_color(last_set_color);
   } else {
-    set_color("#9ee837");
+    set_color(default_green);
   }
 
   update_cookies();
 }
 
 function update_cookies() {
-  document.cookie = "grid_enabled=" + grid_enabled + "; path=/";
-  document.cookie = "custom_color=" + custom_color + "; path=/";
-  document.cookie = "last_color=" + last_color + "; path=/";
+  document.cookie = "grid_enabled=" + grid_enabled_c + "; path=/";
+  document.cookie = "custom_color=" + custom_color_c + "; path=/";
+  document.cookie = "set_color =" + set_color_c + "; path=/";
 }
 
 function update_text() {
@@ -91,7 +95,7 @@ function set_color(new_color) {
     div.style.backgroundColor = new_color;
   });
 
-  last_color = new_color;
+  set_color_c = new_color;
   update_cookies();
 }
 
@@ -100,7 +104,7 @@ function set_custom_color() {
   const new_color = document.getElementById("color-picker").value;
   set_color(new_color);
 
-  custom_color = new_color;
+  custom_color_c = new_color;
   update_cookies();
 }
 
@@ -169,10 +173,10 @@ function set_grid_color(new_color) {
     document.getElementById(pixel.toString()).style.borderColor = new_color;
   }
 
-  if (grid_enabled == "true") {
-    grid_enabled = "false";
+  if (grid_enabled_c == "true") {
+    grid_enabled_c = "false";
   } else {
-    grid_enabled = "true";
+    grid_enabled_c = "true";
   }
 
   update_cookies();
