@@ -1,6 +1,8 @@
 //  COOKIES
 var grid_enabled;
 var custom_color = "#DD2222";
+var last_color = "#FF00FF";
+var saved_cookies;
 
 const char_width = 5;
 const char_height = 8;
@@ -25,13 +27,16 @@ var pixel_data = [
 ];
 
 function get_cookie(name) {
-  return document.cookie
+  return saved_cookies 
     .split('; ')
     .find(row => row.startsWith(name + '='))
     ?.split('=')[1];
 }
 
 function load_cookies() {
+  saved_cookies = document.cookie;
+
+
   const saved_color = get_cookie("custom_color");
 
   if (saved_color) {
@@ -41,7 +46,14 @@ function load_cookies() {
   }
 
   if (get_cookie("grid_enabled") == "true") {
-    toggle_grid();
+    set_grid_color("black");
+  }
+
+  const last_saved_color = get_cookie("last_color");
+  if (last_saved_color) {
+    set_color(last_saved_color);
+  } else {
+    set_color("#9ee837");
   }
 
   update_cookies();
@@ -50,6 +62,7 @@ function load_cookies() {
 function update_cookies() {
   document.cookie = "grid_enabled=" + grid_enabled + "; path=/";
   document.cookie = "custom_color=" + custom_color + "; path=/";
+  document.cookie = "last_color=" + last_color + "; path=/";
 }
 
 function update_text() {
@@ -77,6 +90,9 @@ function set_color(new_color) {
   childDivs.forEach(div => {
     div.style.backgroundColor = new_color;
   });
+
+  last_color = new_color;
+  update_cookies();
 }
 
 
