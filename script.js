@@ -221,4 +221,6 @@ function char_clear() {
 
     0, 0, 0, 0, 0,
   ];
+
+  update_text();
 }
