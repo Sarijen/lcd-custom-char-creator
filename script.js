@@ -31,9 +31,11 @@ var pixel_data = [
   0, 0, 0, 0, 0,
 ];
 
+
 window.onload = () => {
   load_cookies();
 };
+
 
 function get_cookie(name) {
   return saved_cookies 
@@ -41,6 +43,7 @@ function get_cookie(name) {
     .find(row => row.startsWith(name + '='))
     ?.split('=')[1];
 }
+
 
 function load_cookies() {
   saved_cookies = document.cookie;
@@ -67,11 +70,36 @@ function load_cookies() {
   update_cookies();
 }
 
+
 function update_cookies() {
   document.cookie = "grid_enabled=" + grid_enabled_c + "; path=/";
   document.cookie = "custom_color=" + custom_color_c + "; path=/";
   document.cookie = "set_color=" + set_color_c + "; path=/";
 }
+
+
+function update_pwm_code() {
+  let hex_color = set_color_c;
+
+  // Split #RRGGBB color into 3 strings
+  let red = hex_color.substring(1, 3);
+  let green = hex_color.substring(3, 5);
+  let blue = hex_color.substring(5, 7);
+
+  // Convert from Hex strings to int Decimals
+  red = parseInt(red, 16);
+  green = parseInt(green, 16);
+  blue = parseInt(blue, 16);
+
+  let pwm_text = "\n\n8-bit color PWM:\n\n";
+  pwm_text += "Red: " + red + "\n";
+  pwm_text += "Green: " + green + "\n";
+  pwm_text += "Blue: " + blue + "\n";
+
+  document.getElementById("pwm_code").textContent = pwm_text;
+}
+
+
 
 function update_text() {
   let code_text = "uint8_t custom_char[] = {";
@@ -87,7 +115,7 @@ function update_text() {
   }
 
   code_text += "\n};";
-  document.getElementById("code").textContent = code_text;
+  document.getElementById("char_code").textContent = code_text;
 }
 
 
@@ -101,6 +129,7 @@ function set_color(new_color) {
 
   set_color_c = new_color;
   update_cookies();
+  update_pwm_code();
 }
 
 
@@ -110,10 +139,12 @@ function set_custom_color() {
 
   custom_color_c = new_color;
   update_cookies();
+  update_pwm_code();
 }
 
 
 var is_mousedown = false;
+
 
 document.addEventListener('mousedown', () => {
   is_mousedown = true;
@@ -171,6 +202,7 @@ function toggle_grid() {
   set_grid_color(grid_color);
 
 }
+
 
 function set_grid_color(new_color) {
   for (let pixel = 0; pixel < char_size; pixel++) {
