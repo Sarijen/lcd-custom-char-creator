@@ -72,6 +72,17 @@
       Sorry, you don't have Javascript enabled or your browser does not support it.<br>
       You can either enable it or read the source code if you don't trust it.
     </noscript>
+
+    <label>
+      <input type="radio" value="hex" name="char_number_format" onclick="update_text()" checked> Hex
+    </label>
+    <label>
+      <input type="radio" value="binary" name="char_number_format" onclick="update_text()"> Binary
+    </label>
+    <label>
+      <input type="radio" value="decimal" name="char_number_format" onclick="update_text()"> Decimal
+    </label>
+
     <p id="char_code">uint8_t custom_char[] = {<br><br><br><br><br><br><br><br><br>};</p>
     <p id="pwm_code"></p>
   </div>
