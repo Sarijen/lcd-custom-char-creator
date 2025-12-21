@@ -102,7 +102,8 @@ function update_pwm_code() {
 
 
 function update_text() {
-  let code_text = "uint8_t custom_char[] = {";
+  let row_bits;
+  let code_text = "const uint8_t custom_char[] = {";
 
   for (let y = 0; y < char_height; y++) {
     code_text += "\n  0b";
