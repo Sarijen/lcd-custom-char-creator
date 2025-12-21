@@ -106,7 +106,7 @@ function test(number_format) {
 
 function update_text() {
   let row_bits;
-  let code_text = "uint8_t custom_char[] = {";
+  let code_text = "const uint8_t custom_char[] = {";
 
   let number_format = document.querySelector('input[name="char_number_format"]:checked').value;
 
