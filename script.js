@@ -100,19 +100,51 @@ function update_pwm_code() {
 }
 
 
-
 function update_text() {
   let row_bits;
   let code_text = "const uint8_t custom_char[] = {";
 
-  for (let y = 0; y < char_height; y++) {
-    code_text += "\n  0b";
-    for (let x = 0; x < char_width; x++) {
-      let pixel_index = (y * char_width) + x;
+  let number_format = document.querySelector('input[name="char_number_format"]:checked').value;
 
-      code_text += pixel_data[pixel_index].toString();
+// ================ HEX ================
+  if (number_format == "hex") {
+
+    for (let y = 0; y < char_height; y++) {
+      code_text += "\n  0x";
+      for (let x = 0; x < char_width; x++) {
+        let pixel_index = (y * char_width) + x;
+
+        row_bits |= (pixel_data[pixel_index] << (char_width - 1 - x));
+      }
+      code_text += row_bits.toString(16).toUpperCase() + ","; // Hex
+      row_bits = 0;
     }
-    code_text += ",";
+// ================ BINARY ================
+  } else if (number_format == "binary") {
+
+    for (let y = 0; y < char_height; y++) {
+      code_text += "\n  0b";
+      for (let x = 0; x < char_width; x++) {
+        let pixel_index = (y * char_width) + x;
+
+        code_text += pixel_data[pixel_index].toString();
+      }
+      code_text += ",";
+    }
+// ================ DECIMAL ================
+  } else if (number_format == "decimal") {
+
+    for (let y = 0; y < char_height; y++) {
+      code_text += "\n  ";
+      for (let x = 0; x < char_width; x++) {
+        let pixel_index = (y * char_width) + x;
+
+        row_bits |= (pixel_data[pixel_index] << (char_width - 1 - x));
+      }
+      code_text += row_bits.toString(10) + ",";
+      row_bits = 0;
+    }
+
   }
 
   code_text += "\n};";
