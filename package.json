@@ -1,0 +1,25 @@
+{
+  "name": "lcd-custom-char-creator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "npx eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sarijen/lcd-custom-char-creator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sarijen/lcd-custom-char-creator/issues"
+  },
+  "homepage": "https://github.com/Sarijen/lcd-custom-char-creator#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
+    "globals": "^17.1.0"
+  }
+}
