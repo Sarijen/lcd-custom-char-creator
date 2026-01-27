@@ -152,6 +152,14 @@ function update_text() {
 }
 
 
+document.getElementById("set_green_color").addEventListener("click", () => {
+  set_color(default_green);
+});
+
+document.getElementById("set_blue_color").addEventListener("click", () => {
+  set_color(default_blue);
+});
+
 function set_color(new_color) {
   document.getElementById("char").style.backgroundColor = new_color;
 
@@ -166,18 +174,17 @@ function set_color(new_color) {
 }
 
 
-function set_custom_color() {
+document.getElementById("set_custom_color").addEventListener("click", () => {
   const new_color = document.getElementById("color-picker").value;
   set_color(new_color);
 
   custom_color_c = new_color;
   update_cookies();
   update_pwm_code();
-}
+});
 
 
 var is_mousedown = false;
-
 
 document.addEventListener('mousedown', () => {
   is_mousedown = true;
@@ -188,28 +195,36 @@ document.addEventListener('mouseup', () => {
 });
 
 
-function pixel_ondrag(pixel_id) {
-  if (is_mousedown == false) {return;}
+let pixelElements = document.querySelectorAll(".pixel");
 
-  const pixel_element = document.getElementById(pixel_id);
-  pixel_element.classList.toggle("dimn");
+pixelElements.forEach(function(elem) {
+  elem.addEventListener("mouseover", function(e) {
+    let pixel_id = e.currentTarget.id;
+
+    if (is_mousedown == false) {return;}
+
+    const pixel_element = document.getElementById(pixel_id);
+    pixel_element.classList.toggle("dimn");
   
-  pixel_index = Number(pixel_id);
-  toggle_pixel_value(pixel_index);
+    let pixel_index = Number(pixel_id);
+    toggle_pixel_value(pixel_index);
 
-  update_text();
-}
+    update_text();
+  });
 
 
-function pixel_onclick(pixel_id) {
-  const pixel_element = document.getElementById(pixel_id);
-  pixel_element.classList.toggle("dimn");
+  elem.addEventListener("click", function(e) {
+    let pixel_id = e.currentTarget.id;
+
+    const pixel_element = document.getElementById(pixel_id);
+    pixel_element.classList.toggle("dimn");
   
-  const pixel_index = Number(pixel_id);
-  toggle_pixel_value(pixel_index);
+    const pixel_index = Number(pixel_id);
+    toggle_pixel_value(pixel_index);
 
-  update_text();
-}
+    update_text();
+  });
+});
 
 
 function toggle_pixel_value(pixel_index) {
@@ -223,7 +238,7 @@ function toggle_pixel_value(pixel_index) {
 }
 
 
-function toggle_grid() {
+document.getElementById("toggle_grid").addEventListener("click", () => {
   let grid_color = document.getElementById("0").style.borderColor;
 
   if (grid_color == "black") {
@@ -234,7 +249,7 @@ function toggle_grid() {
 
   set_grid_color(grid_color);
 
-}
+});
 
 
 function set_grid_color(new_color) {
@@ -252,7 +267,7 @@ function set_grid_color(new_color) {
 }
 
 
-function char_invert() {
+document.getElementById("char_invert").addEventListener("click", () => {
   for (let pixel = 0; pixel < char_size; pixel++) {
     toggle_pixel_value(pixel);
 
@@ -261,10 +276,10 @@ function char_invert() {
   }
 
   update_text();
-}
+});
 
 
-function char_clear() {
+document.getElementById("char_clear").addEventListener("click", () => {
   for (let pixel = 0; pixel < char_size; pixel++) {
     document.getElementById(pixel.toString()).classList.remove("dimn");
   }
@@ -288,4 +303,4 @@ function char_clear() {
   ];
 
   update_text();
-}
+});

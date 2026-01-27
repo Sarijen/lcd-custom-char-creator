@@ -18,54 +18,54 @@
 
 <div class="col_container">
   <div class="button">
-    <button onmousedown="set_color('#9ee837')">Green</button>
-    <button onmousedown="set_color('#37d0e8')">Blue</button>
-    <button onmousedown="set_custom_color()">Custom</button>
-    <input type="color" value="#DD2222" id="color-picker" onmousedown="set_custom_color()">
+    <button id="set_green_color">Green</button>
+    <button id="set_blue_color">Blue</button>
+    <button id="set_custom_color">Custom</button>
+    <input type="color" value="#DD2222" id="color-picker" id="set_custom_color">
   </div>
 
   <div class="row_container">
   <div class="char" id="char" ondragstart="return false;">
-    <div id="0"  onmouseover="pixel_ondrag('0') " onmousedown="pixel_onclick('0')"></div>
-    <div id="1"  onmouseover="pixel_ondrag('1') " onmousedown="pixel_onclick('1')"></div>
-    <div id="2"  onmouseover="pixel_ondrag('2') " onmousedown="pixel_onclick('2')"></div>
-    <div id="3"  onmouseover="pixel_ondrag('3') " onmousedown="pixel_onclick('3')"></div>
-    <div id="4"  onmouseover="pixel_ondrag('4') " onmousedown="pixel_onclick('4')"></div>
-    <div id="5"  onmouseover="pixel_ondrag('5') " onmousedown="pixel_onclick('5')"></div>
-    <div id="6"  onmouseover="pixel_ondrag('6') " onmousedown="pixel_onclick('6')"></div>
-    <div id="7"  onmouseover="pixel_ondrag('7') " onmousedown="pixel_onclick('7')"></div>
-    <div id="8"  onmouseover="pixel_ondrag('8') " onmousedown="pixel_onclick('8')"></div>
-    <div id="9"  onmouseover="pixel_ondrag('9') " onmousedown="pixel_onclick('9')"></div>
-    <div id="10" onmouseover="pixel_ondrag('10')" onmousedown="pixel_onclick('10')"></div>
-    <div id="11" onmouseover="pixel_ondrag('11')" onmousedown="pixel_onclick('11')"></div>
-    <div id="12" onmouseover="pixel_ondrag('12')" onmousedown="pixel_onclick('12')"></div>
-    <div id="13" onmouseover="pixel_ondrag('13')" onmousedown="pixel_onclick('13')"></div>
-    <div id="14" onmouseover="pixel_ondrag('14')" onmousedown="pixel_onclick('14')"></div>
-    <div id="15" onmouseover="pixel_ondrag('15')" onmousedown="pixel_onclick('15')"></div>
-    <div id="16" onmouseover="pixel_ondrag('16')" onmousedown="pixel_onclick('16')"></div>
-    <div id="17" onmouseover="pixel_ondrag('17')" onmousedown="pixel_onclick('17')"></div>
-    <div id="18" onmouseover="pixel_ondrag('18')" onmousedown="pixel_onclick('18')"></div>
-    <div id="19" onmouseover="pixel_ondrag('19')" onmousedown="pixel_onclick('19')"></div>
-    <div id="20" onmouseover="pixel_ondrag('20')" onmousedown="pixel_onclick('20')"></div>
-    <div id="21" onmouseover="pixel_ondrag('21')" onmousedown="pixel_onclick('21')"></div>
-    <div id="22" onmouseover="pixel_ondrag('22')" onmousedown="pixel_onclick('22')"></div>
-    <div id="23" onmouseover="pixel_ondrag('23')" onmousedown="pixel_onclick('23')"></div>
-    <div id="24" onmouseover="pixel_ondrag('24')" onmousedown="pixel_onclick('24')"></div>
-    <div id="25" onmouseover="pixel_ondrag('25')" onmousedown="pixel_onclick('25')"></div>
-    <div id="26" onmouseover="pixel_ondrag('26')" onmousedown="pixel_onclick('26')"></div>
-    <div id="27" onmouseover="pixel_ondrag('27')" onmousedown="pixel_onclick('27')"></div>
-    <div id="28" onmouseover="pixel_ondrag('28')" onmousedown="pixel_onclick('28')"></div>
-    <div id="29" onmouseover="pixel_ondrag('29')" onmousedown="pixel_onclick('29')"></div>
-    <div id="30" onmouseover="pixel_ondrag('30')" onmousedown="pixel_onclick('30')"></div>
-    <div id="31" onmouseover="pixel_ondrag('31')" onmousedown="pixel_onclick('31')"></div>
-    <div id="32" onmouseover="pixel_ondrag('32')" onmousedown="pixel_onclick('32')"></div>
-    <div id="33" onmouseover="pixel_ondrag('33')" onmousedown="pixel_onclick('33')"></div>
-    <div id="34" onmouseover="pixel_ondrag('34')" onmousedown="pixel_onclick('34')"></div>
-    <div id="35" onmouseover="pixel_ondrag('35')" onmousedown="pixel_onclick('35')"></div>
-    <div id="36" onmouseover="pixel_ondrag('36')" onmousedown="pixel_onclick('36')"></div>
-    <div id="37" onmouseover="pixel_ondrag('37')" onmousedown="pixel_onclick('37')"></div>
-    <div id="38" onmouseover="pixel_ondrag('38')" onmousedown="pixel_onclick('38')"></div>
-    <div id="39" onmouseover="pixel_ondrag('39')" onmousedown="pixel_onclick('39')"></div>
+    <div id="0"  class="pixel"></div>
+    <div id="1"  class="pixel"></div>
+    <div id="2"  class="pixel"></div>
+    <div id="3"  class="pixel"></div>
+    <div id="4"  class="pixel"></div>
+    <div id="5"  class="pixel"></div>
+    <div id="6"  class="pixel"></div>
+    <div id="7"  class="pixel"></div>
+    <div id="8"  class="pixel"></div>
+    <div id="9"  class="pixel"></div>
+    <div id="10" class="pixel"></div>
+    <div id="11" class="pixel"></div>
+    <div id="12" class="pixel"></div>
+    <div id="13" class="pixel"></div>
+    <div id="14" class="pixel"></div>
+    <div id="15" class="pixel"></div>
+    <div id="16" class="pixel"></div>
+    <div id="17" class="pixel"></div>
+    <div id="18" class="pixel"></div>
+    <div id="19" class="pixel"></div>
+    <div id="20" class="pixel"></div>
+    <div id="21" class="pixel"></div>
+    <div id="22" class="pixel"></div>
+    <div id="23" class="pixel"></div>
+    <div id="24" class="pixel"></div>
+    <div id="25" class="pixel"></div>
+    <div id="26" class="pixel"></div>
+    <div id="27" class="pixel"></div>
+    <div id="28" class="pixel"></div>
+    <div id="29" class="pixel"></div>
+    <div id="30" class="pixel"></div>
+    <div id="31" class="pixel"></div>
+    <div id="32" class="pixel"></div>
+    <div id="33" class="pixel"></div>
+    <div id="34" class="pixel"></div>
+    <div id="35" class="pixel"></div>
+    <div id="36" class="pixel"></div>
+    <div id="37" class="pixel"></div>
+    <div id="38" class="pixel"></div>
+    <div id="39" class="pixel"></div>
   </div>
   <div class="code">
     <noscript>
@@ -89,9 +89,9 @@
   </div>
 
   <div class="buttons">
-  <button onmousedown="toggle_grid()">Toggle grid</button>
-  <button onmousedown="char_invert()">Invert</button>
-  <button onmousedown="char_clear()">Clear</button>
+  <button id="toggle_grid">Toggle grid</button>
+  <button id="char_invert">Invert</button>
+  <button id="char_clear">Clear</button>
   </div>
 
 </div>
