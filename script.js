@@ -91,7 +91,7 @@ function update_pwm_code() {
   green = parseInt(green, 16);
   blue = parseInt(blue, 16);
 
-  let pwm_text = "\n\n8-bit color PWM:\n\n";
+  let pwm_text = "8-bit color PWM:\n\n";
   pwm_text += "Red: " + red + "\n";
   pwm_text += "Green: " + green + "\n";
   pwm_text += "Blue: " + blue + "\n";
@@ -101,10 +101,21 @@ function update_pwm_code() {
 
 
 function update_text() {
-  let row_bits;
-  let code_text = "const uint8_t custom_char[] = {";
+  document.getElementById("char_code").textContent = get_formatted_code();
+  document.getElementById("copy_to_clipboard").textContent = "Copy to clipboard";
+}
 
+document.getElementById("copy_to_clipboard").addEventListener("click", () => {
+  navigator.clipboard.writeText(get_formatted_code());
+
+  document.getElementById("copy_to_clipboard").textContent = "Copied!";
+});
+
+
+function get_formatted_code() {
+  let row_bits;
   let number_format = document.querySelector('input[name="char_number_format"]:checked').value;
+  let code_text = "const uint8_t custom_char[] = {";
 
 // ================ HEX ================
   if (number_format == "hex") {
@@ -148,7 +159,7 @@ function update_text() {
   }
 
   code_text += "\n};";
-  document.getElementById("char_code").textContent = code_text;
+  return code_text; 
 }
 
 
@@ -304,3 +315,4 @@ document.getElementById("char_clear").addEventListener("click", () => {
 
   update_text();
 });
+

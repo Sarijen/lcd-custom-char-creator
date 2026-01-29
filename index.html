@@ -73,6 +73,7 @@
       You can either enable it or read the source code if you don't trust it.
     </noscript>
 
+
     <label>
       <input type="radio" value="hex" name="char_number_format" onclick="update_text()" checked> Hex
     </label>
@@ -83,8 +84,11 @@
       <input type="radio" value="decimal" name="char_number_format" onclick="update_text()"> Decimal
     </label>
 
+
     <p id="char_code">const uint8_t custom_char[] = {<br><br><br><br><br><br><br><br><br>};</p>
+    <button id="copy_to_clipboard">Copy code to clipboard</button>
     <p id="pwm_code"></p>
+
   </div>
   </div>
 
