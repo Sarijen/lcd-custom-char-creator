@@ -127,7 +127,7 @@ function get_formatted_code() {
 
         row_bits |= (pixel_data[pixel_index] << (char_width - 1 - x));
       }
-      code_text += row_bits.toString(16).toUpperCase() + ","; // Hex
+      code_text += row_bits.toString(16).padStart(2, "0").toUpperCase() + ",";
       row_bits = 0;
     }
 // ================ BINARY ================
