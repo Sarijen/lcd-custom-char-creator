@@ -9,4 +9,6 @@
 - Quick copy
 
 # Showcase
-<img src="assets/website_screenshot.png" width="700"/>
+<img src="assets/website_screenshot.png" width="700"/>  
+
+<img src="assets/website_vertical_screenshot.png" height="700"/>  
