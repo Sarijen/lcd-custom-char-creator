@@ -35,10 +35,16 @@ h1, h2 {
   }
 }
 
+.form-control {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 0;
+}
+
 .code {
   background-color:#202021;
   padding: 1rem;
-  margin: 1rem;
+  margin: 0.5rem;
   width: auto;
 }
 
@@ -100,22 +106,21 @@ button:active {
 }
 
 .char {
+  align-self: flex-start;
   display: grid;
-  border: 15px solid rgb(25, 25, 25);
   grid-template-columns: auto auto auto auto auto;
-  background-color: rgb(158, 232, 55);
+  grid-auto-rows: 50px;
+  border: 15px solid rgb(25, 25, 25);
   transition: background-color 0.3s ease;
   padding: 25px;
 }
 
 .char > div {
-  background-color: rgb(158, 232, 55);
   transition: background-color 0.3s ease, border 0.25s ease, filter 0.2s ease;
   border: 1px solid transparent;
   margin: 3px;
-  padding: 0px;
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 40px;
+  width: 40px;
 }
 
 .char > div:hover {
