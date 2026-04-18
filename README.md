@@ -1,4 +1,6 @@
 # Yet Another Custom Character Creator for HD44780 LCD Displays 
+[![pages-build-deployment](https://github.com/Sarijen/lcd-custom-char-creator/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/Sarijen/lcd-custom-char-creator/actions/workflows/pages/pages-build-deployment)  
+
 #### Click [here](https://sarijen.github.io/lcd-custom-char-creator/) to open the website/page
 
 # Features
